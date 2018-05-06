@@ -44,5 +44,42 @@ public class Consultas extends Conexion {
         return false;
         
     }
-    
+    public boolean registrar(String carnet, String nombre, String apellido, String correo, String telefono, String pass,String tipousu) throws SQLException{
+   
+        PreparedStatement ps = null;
+        
+        
+   try {
+       String sql ="Insert into usuarios (carnet, nombre,apellido,correo,telefono,pass,tipodeusuario) values(?,?,?,?,?,?,?)" ;
+   ps= getConexion().prepareStatement(sql);
+   ps.setString(1, carnet);
+   ps.setString(2, nombre);
+   ps.setString(3, apellido);
+   ps.setString(4, correo);
+   ps.setString(5, telefono);
+   ps.setString(6, pass);
+   ps.setString(7, tipousu);
+   
+       if (ps.executeUpdate() == 1) {
+           return true;
+       }
+       
+   }
+   catch(SQLException e){
+       
+   }
+   finally{
+       try{
+       if (getConexion()!=null) getConexion().close();
+       if(ps != null) ps.close();
+       }
+       catch(SQLException e){
+           System.err.println("Error" + e);
+       }
+       
+   }
+        
+        return false;
+    }
+
 }

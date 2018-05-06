@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+        <script src="js/main.js"></script>
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +47,7 @@
             <div class="col-md-4"></div>
             <div class="container col-md-4">
                  
-    <form class="form-signin" action="Iniciar" method="POST">
+    <form class="form-signin" action="Iniciar" method="POST" id="forminicio">
       <h3 class="h3 mb-3 font-weight-normal">Iniciar Sesion </h3>
       <label for="inputcarnet" class="sr-only">Carnet</label>
       <input type="text" id="carnet" name="carnet" class="form-control" placeholder="Ingresar Carnet" required autofocus>
@@ -58,7 +58,7 @@
               <br>
         
       
-              <button class="btn btn-lg btn-primary btn-block" type="submit" value="ingresar">Iniciar Sesion</button>
+              <button id="btninicio" class="btn btn-lg btn-primary btn-block" type="submit" value="ingresar">Iniciar Sesion</button>
     </form>
                 
 

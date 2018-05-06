@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import sv.edu.udb.operaciones.Consultas;
 
 /**
@@ -39,9 +40,11 @@ public class InicioSesion extends HttpServlet {
         
         String usuario = request.getParameter("carnet");
         String pass = request.getParameter("pass");
-        
+        String nombre = request.getParameter("nombre");
         Consultas co = new Consultas();
         if (co.autenticacion(usuario, pass)){
+            HttpSession sesion = request.getSession(true);
+            sesion.setAttribute("carnet", usuario);
             response.sendRedirect("inicio.jsp");
         }
         else{

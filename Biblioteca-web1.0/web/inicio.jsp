@@ -5,6 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+HttpSession sesion = request.getSession(false);
+String usuario = (String)sesion.getAttribute("carnet");
+if (usuario.equals("")) {
+        response.sendRedirect("index.jsp");
+       
+    }
+%>
 <!DOCTYPE html>
 <!--
 To<! change this license header, choose License Headers in Project Properties.
@@ -44,7 +52,7 @@ and open the template in the editor.
         <br>
         <div class="jumbotron">
             <div class="container">
-                <h1>Bienvenido a nuestra biblioteca</h1>
+                <h1>Bienvenido a nuestra biblioteca <% out.println(usuario);%></h1>
             </div>
         </div>
 
@@ -54,11 +62,11 @@ and open the template in the editor.
                 <div class="col-md-3">
                     <div class="panel panel-info">
                         <div class ="panel-heading">
-                            <h2>Buscar libros.</h2>
+                            <h2>Registrar</h2>
                         </div>
                         <div class="panel-body">
-                            <p align="justify">Este sistema de administración de bibliotecas le permite buscar libros que están disponibles en la biblioteca. Usando el siguiente enlace, podrás buscar libros, verificar su disponibilidad y consultar ese libro.</p>
-                            <p><a class="btn btn-primary" href="SearchBookController" role="button">Search Book &raquo;</a></p>
+                            <p align="justify">Este sistema de administración de biblioteca le permite Registrar usuarios</p>
+                            <p><a class="btn btn-primary" href="agregarusu.jsp" role="button">Registrar Usuario &raquo;</a></p>
                         </div>
                     </div>
                 </div>
@@ -68,8 +76,8 @@ and open the template in the editor.
                             <h2>Book Loan</h2>
                         </div>
                         <div class="panel-body">
-                            <p>This library management system allows you to loan books that are available in the library. Using the link below you will be able to check out and check in the books that are available in the library.</p>
-                            <p><a class="btn btn-primary" href="BookLoanController" role="button">Check out &raquo;</a></p>
+                            <p align="justify">Este sistema de administración de biblioteca le permite ver todos los registros hechos</p>
+                            <p><a class="btn btn-primary" href="mostrarregistros.jsp" role="button">Check out &raquo;</a></p>
                         </div>
                     </div>
                 </div>
