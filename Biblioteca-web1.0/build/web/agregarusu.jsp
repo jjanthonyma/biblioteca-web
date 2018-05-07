@@ -7,7 +7,14 @@
 
 <%@page import="sv.edu.udb.operaciones.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%
+HttpSession sesion = request.getSession(false);
+String usuario = (String)sesion.getAttribute("carnet");
+if (usuario.equals("")) {
+        response.sendRedirect("index.jsp");
+       
+    }
+%>
 
 <!DOCTYPE html>
 
@@ -29,7 +36,7 @@
             <div class="container">
                 <div class="navbar-header">
                     
-                    <a class="navbar-brand" href="index.jsp">Biblioteca Don Bosco</a>
+                    <a class="navbar-brand" href="inicio.jsp">Biblioteca Don Bosco</a>
              
                 </div>
 
@@ -78,12 +85,6 @@
               <br>
               <br>
               
-                
-              
-
-      
-        
-      
               <button class="btn btn-lg btn-primary btn-block" type="submit" value="ingresar">Registrar</button>
     </form>
                 

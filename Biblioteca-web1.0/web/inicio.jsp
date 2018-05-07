@@ -37,7 +37,7 @@ and open the template in the editor.
             <div class="container">
                 <div class="navbar-header">
                     
-                    <a class="navbar-brand" href="index.jsp">Biblioteca Don Bosco</a>
+                    <a class="navbar-brand" href="inicio.jsp">Biblioteca Don Bosco</a>
              
                 </div>
                 <div class="nav navbar-nav navbar-right">
@@ -73,11 +73,11 @@ and open the template in the editor.
                 <div class="col-md-3">
                     <div class="panel panel-info">
                         <div class ="panel-heading">
-                            <h2>Book Loan</h2>
+                            <h2>Mostrar</h2>
                         </div>
                         <div class="panel-body">
                             <p align="justify">Este sistema de administración de biblioteca le permite ver todos los registros hechos</p>
-                            <p><a class="btn btn-primary" href="mostrarregistros.jsp" role="button">Check out &raquo;</a></p>
+                            <p><a class="btn btn-primary" href="mostrarregistros.jsp" role="button">Mostrar &raquo;</a></p>
                         </div>
                     </div>
                 </div>
